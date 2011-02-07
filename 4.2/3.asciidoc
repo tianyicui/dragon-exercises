@@ -13,3 +13,25 @@ T~0~ ::= 0 T~0~ | 0
 S~1~ ::= S~c~ T~1~ S~1~ | T~1~ S~c~
 
 T~0~ ::= 1 T~1~ | 1
+
+== e)
+
+It's easy to design a DFA for that by using Aho-Corasic automata and then convert it into context-free grammar.
+
+The automata:
+
+[format="csv",options="header",width="50%"]
+|=================================
+State,Edge 0,Edge 1
+0,1,0
+1,1,2
+2,1,None
+|=================================
+
+The grammar:
+
+S~0~ = 0 S~1~ | 1 S~0~ | ϵ
+
+S~1~ = 0 S~1~ | 1 S~2~ | ϵ
+
+S~2~ = 0 S~1~ | ϵ
