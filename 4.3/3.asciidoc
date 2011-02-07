@@ -1,0 +1,7 @@
+Since the _matchedStmt_ is not necessarily matched, it can be
+
+____
++*if* A *then* B *else* *if* C *then* D+.
+____
+
+Then, put that between +*then*+ and +*else*+, the statement became ambiguous.
